@@ -34,7 +34,7 @@
 	#define PORT_EXPANDER_ENABLE            // When enabled, buttons can be connected via port-expander PCA9555 (https://forum.espuino.de/t/einsatz-des-port-expanders-pca9555/306)
 	//#define I2S_COMM_FMT_LSB_ENABLE       // Enables FMT instead of MSB for I2S-communication-format. Used e.g. by PT2811. Don't enable for MAX98357a, AC101 or PCM5102A)
 	#define MDNS_ENABLE                     // When enabled, you don't have to handle with ESPuino's IP-address. If hostname is set to "ESPuino", you can reach it via ESPuino.local
-	//#define MQTT_ENABLE                   // Make sure to configure mqtt-server and (optionally) username+pwd
+	#define MQTT_ENABLE                   // Make sure to configure mqtt-server and (optionally) username+pwd
 	#define FTP_ENABLE                      // Enables FTP-server; DON'T FORGET TO ACTIVATE AFTER BOOT BY PRESSING PAUSE + NEXT-BUTTONS (IN PARALLEL)!
 	#define NEOPIXEL_ENABLE                 // Don't forget configuration of NUM_LEDS if enabled
 	//#define NEOPIXEL_REVERSE_ROTATION     // Some Neopixels are adressed/soldered counter-clockwise. This can be configured here.
@@ -267,32 +267,32 @@
 	#ifdef MQTT_ENABLE
 		constexpr uint16_t mqttRetryInterval = 60;                // Try to reconnect to MQTT-server every (n) seconds if connection is broken
 		constexpr uint8_t mqttMaxRetriesPerInterval = 1;          // Number of retries per time-interval (mqttRetryInterval). mqttRetryInterval 60 / mqttMaxRetriesPerInterval 1 => once every 60s
-		#define DEVICE_HOSTNAME "ellibox-espuino"         // Name that is used for MQTT
-		constexpr const char topicSleepCmnd[] = "Cmnd/ESPuino/Sleep";
-		constexpr const char topicSleepState[] = "State/ESPuino/Sleep";
-		constexpr const char topicRfidCmnd[] = "Cmnd/ESPuino/Rfid";
-		constexpr const char topicRfidState[] = "State/ESPuino/Rfid";
-		constexpr const char topicTrackState[] = "State/ESPuino/Track";
-		constexpr const char topicTrackControlCmnd[] = "Cmnd/ESPuino/TrackControl";
-		constexpr const char topicCoverChangedState[] = "State/ESPuino/CoverChanged";
-		constexpr const char topicLoudnessCmnd[] = "Cmnd/ESPuino/Loudness";
-		constexpr const char topicLoudnessState[] = "State/ESPuino/Loudness";
-		constexpr const char topicSleepTimerCmnd[] = "Cmnd/ESPuino/SleepTimer";
-		constexpr const char topicSleepTimerState[] = "State/ESPuino/SleepTimer";
-		constexpr const char topicState[] = "State/ESPuino/State";
-		constexpr const char topicCurrentIPv4IP[] = "State/ESPuino/IPv4";
-		constexpr const char topicLockControlsCmnd[] ="Cmnd/ESPuino/LockControls";
-		constexpr const char topicLockControlsState[] ="State/ESPuino/LockControls";
-		constexpr const char topicPlaymodeState[] = "State/ESPuino/Playmode";
-		constexpr const char topicRepeatModeCmnd[] = "Cmnd/ESPuino/RepeatMode";
-		constexpr const char topicRepeatModeState[] = "State/ESPuino/RepeatMode";
-		constexpr const char topicLedBrightnessCmnd[] = "Cmnd/ESPuino/LedBrightness";
-		constexpr const char topicLedBrightnessState[] = "State/ESPuino/LedBrightness";
-		constexpr const char topicWiFiRssiState[] = "State/ESPuino/WifiRssi";
-		constexpr const char topicSRevisionState[] = "State/ESPuino/SoftwareRevision";
+		#define DEVICE_HOSTNAME "espuino"         // Name that is used for MQTT
+		constexpr const char topicSleepCmnd[] = "Cmnd/ellibox/Sleep";
+		constexpr const char topicSleepState[] = "State/ellibox/Sleep";
+		constexpr const char topicRfidCmnd[] = "Cmnd/ellibox/Rfid";
+		constexpr const char topicRfidState[] = "State/ellibox/Rfid";
+		constexpr const char topicTrackState[] = "State/ellibox/Track";
+		constexpr const char topicTrackControlCmnd[] = "Cmnd/ellibox/TrackControl";
+		constexpr const char topicCoverChangedState[] = "State/ellibox/CoverChanged";
+		constexpr const char topicLoudnessCmnd[] = "Cmnd/ellibox/Loudness";
+		constexpr const char topicLoudnessState[] = "State/ellibox/Loudness";
+		constexpr const char topicSleepTimerCmnd[] = "Cmnd/ellibox/SleepTimer";
+		constexpr const char topicSleepTimerState[] = "State/ellibox/SleepTimer";
+		constexpr const char topicState[] = "State/ellibox/State";
+		constexpr const char topicCurrentIPv4IP[] = "State/ellibox/IPv4";
+		constexpr const char topicLockControlsCmnd[] ="Cmnd/ellibox/LockControls";
+		constexpr const char topicLockControlsState[] ="State/ellibox/LockControls";
+		constexpr const char topicPlaymodeState[] = "State/ellibox/Playmode";
+		constexpr const char topicRepeatModeCmnd[] = "Cmnd/ellibox/RepeatMode";
+		constexpr const char topicRepeatModeState[] = "State/ellibox/RepeatMode";
+		constexpr const char topicLedBrightnessCmnd[] = "Cmnd/ellibox/LedBrightness";
+		constexpr const char topicLedBrightnessState[] = "State/ellibox/LedBrightness";
+		constexpr const char topicWiFiRssiState[] = "State/ellibox/WifiRssi";
+		constexpr const char topicSRevisionState[] = "State/ellibox/SoftwareRevision";
 		#ifdef BATTERY_MEASURE_ENABLE
-		constexpr const char topicBatteryVoltage[] = "State/ESPuino/Voltage";
-		constexpr const char topicBatterySOC[]     = "State/ESPuino/Battery";
+		constexpr const char topicBatteryVoltage[] = "State/ellibox/Voltage";
+		constexpr const char topicBatterySOC[]     = "State/ellibox/Battery";
 		#endif
 	#endif
 
