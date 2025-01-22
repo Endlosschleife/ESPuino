@@ -200,7 +200,7 @@
 	constexpr const char timeZone[] = "CET-1CEST,M3.5.0,M10.5.0/3"; // Europe/Berlin
 
 	// ESPuino will create a WiFi if joing existing WiFi was not possible. Name and password can be configured here.
-	constexpr const char accessPointNetworkSSID[] = "Elli-Box";     // Access-point's SSID
+	constexpr const char accessPointNetworkSSID[] = "Lino-Box";     // Access-point's SSID
 	constexpr const char accessPointNetworkPassword[] = "";        // Access-point's Password, at least 8 characters! Set to an empty string to spawn an open WiFi.
 
 	// Bluetooth
@@ -212,7 +212,7 @@
 	//#################### Settings for optional Modules##############################
 	// (optinal) Neopixel
 	#ifdef NEOPIXEL_ENABLE
-		#define NUM_INDICATOR_LEDS		5          	// number of Neopixel LEDs (formerly NUM_LEDS)
+		#define NUM_INDICATOR_LEDS		24          	// number of Neopixel LEDs (formerly NUM_LEDS)
 		#define NUM_CONTROL_LEDS		0		// optional control leds (https://forum.espuino.de/t/statische-ws2812-leds/1703)
                 #define CONTROL_LEDS_COLORS		{}		// Colors for the control LEDs. Make sure it lists at least NUM_CONTROL_LEDS colors, e.g. for three control LEDs define: CONTROL_LEDS_COLORS {CRGB::Yellow, CRGB::Blue, 0xFFFFFF} (predefined colors: http://fastled.io/docs/3.1/struct_c_r_g_b.html)
 		#define CHIPSET					WS2812B     	// type of Neopixel
@@ -268,31 +268,31 @@
 		constexpr uint16_t mqttRetryInterval = 60;                // Try to reconnect to MQTT-server every (n) seconds if connection is broken
 		constexpr uint8_t mqttMaxRetriesPerInterval = 1;          // Number of retries per time-interval (mqttRetryInterval). mqttRetryInterval 60 / mqttMaxRetriesPerInterval 1 => once every 60s
 		#define DEVICE_HOSTNAME "espuino"         // Name that is used for MQTT
-		constexpr const char topicSleepCmnd[] = "Cmnd/ellibox/Sleep";
-		constexpr const char topicSleepState[] = "State/ellibox/Sleep";
-		constexpr const char topicRfidCmnd[] = "Cmnd/ellibox/Rfid";
-		constexpr const char topicRfidState[] = "State/ellibox/Rfid";
-		constexpr const char topicTrackState[] = "State/ellibox/Track";
-		constexpr const char topicTrackControlCmnd[] = "Cmnd/ellibox/TrackControl";
-		constexpr const char topicCoverChangedState[] = "State/ellibox/CoverChanged";
-		constexpr const char topicLoudnessCmnd[] = "Cmnd/ellibox/Loudness";
-		constexpr const char topicLoudnessState[] = "State/ellibox/Loudness";
-		constexpr const char topicSleepTimerCmnd[] = "Cmnd/ellibox/SleepTimer";
-		constexpr const char topicSleepTimerState[] = "State/ellibox/SleepTimer";
-		constexpr const char topicState[] = "State/ellibox/State";
-		constexpr const char topicCurrentIPv4IP[] = "State/ellibox/IPv4";
-		constexpr const char topicLockControlsCmnd[] ="Cmnd/ellibox/LockControls";
-		constexpr const char topicLockControlsState[] ="State/ellibox/LockControls";
-		constexpr const char topicPlaymodeState[] = "State/ellibox/Playmode";
-		constexpr const char topicRepeatModeCmnd[] = "Cmnd/ellibox/RepeatMode";
-		constexpr const char topicRepeatModeState[] = "State/ellibox/RepeatMode";
-		constexpr const char topicLedBrightnessCmnd[] = "Cmnd/ellibox/LedBrightness";
-		constexpr const char topicLedBrightnessState[] = "State/ellibox/LedBrightness";
-		constexpr const char topicWiFiRssiState[] = "State/ellibox/WifiRssi";
-		constexpr const char topicSRevisionState[] = "State/ellibox/SoftwareRevision";
+		constexpr const char topicSleepCmnd[] = "Cmnd/linobox/Sleep";
+		constexpr const char topicSleepState[] = "State/linobox/Sleep";
+		constexpr const char topicRfidCmnd[] = "Cmnd/linobox/Rfid";
+		constexpr const char topicRfidState[] = "State/linobox/Rfid";
+		constexpr const char topicTrackState[] = "State/linobox/Track";
+		constexpr const char topicTrackControlCmnd[] = "Cmnd/linobox/TrackControl";
+		constexpr const char topicCoverChangedState[] = "State/linobox/CoverChanged";
+		constexpr const char topicLoudnessCmnd[] = "Cmnd/linobox/Loudness";
+		constexpr const char topicLoudnessState[] = "State/linobox/Loudness";
+		constexpr const char topicSleepTimerCmnd[] = "Cmnd/linobox/SleepTimer";
+		constexpr const char topicSleepTimerState[] = "State/linobox/SleepTimer";
+		constexpr const char topicState[] = "State/linobox/State";
+		constexpr const char topicCurrentIPv4IP[] = "State/linobox/IPv4";
+		constexpr const char topicLockControlsCmnd[] ="Cmnd/linobox/LockControls";
+		constexpr const char topicLockControlsState[] ="State/linobox/LockControls";
+		constexpr const char topicPlaymodeState[] = "State/linobox/Playmode";
+		constexpr const char topicRepeatModeCmnd[] = "Cmnd/linobox/RepeatMode";
+		constexpr const char topicRepeatModeState[] = "State/linobox/RepeatMode";
+		constexpr const char topicLedBrightnessCmnd[] = "Cmnd/linobox/LedBrightness";
+		constexpr const char topicLedBrightnessState[] = "State/linobox/LedBrightness";
+		constexpr const char topicWiFiRssiState[] = "State/linobox/WifiRssi";
+		constexpr const char topicSRevisionState[] = "State/linobox/SoftwareRevision";
 		#ifdef BATTERY_MEASURE_ENABLE
-		constexpr const char topicBatteryVoltage[] = "State/ellibox/Voltage";
-		constexpr const char topicBatterySOC[]     = "State/ellibox/Battery";
+		constexpr const char topicBatteryVoltage[] = "State/linobox/Voltage";
+		constexpr const char topicBatterySOC[]     = "State/linobox/Battery";
 		#endif
 	#endif
 
